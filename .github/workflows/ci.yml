@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  colcon:
+    name: colcon build + test (humble)
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    container:
+      image: ros:humble-ros-base
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          path: src/vbot_ros2_msgs
+
+      - name: rosdep install
+        shell: bash
+        run: |
+          set -euo pipefail
+          apt-get update
+          rosdep update --rosdistro=humble
+          rosdep install --from-paths src --ignore-src -r -y --rosdistro=humble
+
+      - name: colcon build
+        shell: bash
+        run: |
+          set -euo pipefail
+          source /opt/ros/humble/setup.bash
+          colcon build --event-handlers console_direct+ --cmake-args -DCMAKE_BUILD_TYPE=Release
+
+      - name: colcon test
+        shell: bash
+        run: |
+          set -euo pipefail
+          source /opt/ros/humble/setup.bash
+          colcon test --event-handlers console_direct+ --return-code-on-test-failure
+          colcon test-result --verbose
