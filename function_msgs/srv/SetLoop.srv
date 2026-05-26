@@ -1,0 +1,26 @@
+# SetLoop.srv
+# Configure loop node behavior, including sampling and scheduling parameters
+
+# Sampling mode constants
+uint8 SAMPLING_WITH_REPLACEMENT = 0
+uint8 SAMPLING_WITHOUT_REPLACEMENT = 1
+uint8 SAMPLING_SEQUENTIAL = 2
+
+# Request
+uint8 sampling_mode
+string predefined_actions_filename
+string[] dag_nodes_json
+bool reset_sampling_state
+float32 mean_interval
+float32 min_interval
+float32 max_interval
+
+---
+
+# Response
+bool success
+string message
+uint8 error_code
+uint32 total_actions_available
+uint32 remaining_actions
+float32 active_interval

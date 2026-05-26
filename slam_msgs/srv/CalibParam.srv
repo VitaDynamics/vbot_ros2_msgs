@@ -1,0 +1,6 @@
+# 请求参数
+string calib_type  # "static" 或 "dynamic"
+---
+# 响应参数
+bool success
+string message

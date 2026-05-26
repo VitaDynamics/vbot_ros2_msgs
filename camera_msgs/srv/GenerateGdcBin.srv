@@ -1,0 +1,18 @@
+# Request
+int32 gdc_width
+int32 gdc_height
+int32 out_width
+int32 out_height
+sensor_msgs/CameraInfo left
+sensor_msgs/CameraInfo right
+string output_prefix  # if non-empty, save files to this prefix path
+---
+# Response
+bool success
+string message
+string left_bin_path
+string right_bin_path
+uint64 left_bin_size
+uint64 right_bin_size
+
+

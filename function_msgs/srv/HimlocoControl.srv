@@ -1,0 +1,4 @@
+string operation  # "enter" or "exit"
+---
+bool success
+string message

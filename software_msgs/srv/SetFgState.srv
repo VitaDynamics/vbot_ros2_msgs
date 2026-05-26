@@ -1,0 +1,10 @@
+string app_name #Trigger state switch source
+string fg_name  #Function group name
+string state #Function group state
+---
+int32 OK = 0
+int32 ERROR_CODE_UNKNOWN_FG = 1
+int32 ERROR_CODE_UNSUPPORT_STATE = 2
+int32 ERROR_CODE_UNSUPPORT_TRANS = 3
+
+int32 error_code

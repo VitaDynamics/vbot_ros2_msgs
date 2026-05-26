@@ -1,0 +1,3 @@
+uint32 fault_id
+uint32 occured_duration
+uint32 restored_duration

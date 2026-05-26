@@ -1,0 +1,23 @@
+# SetProactive.srv
+# Service for configuring proactive node behavior with advanced sampling modes
+# Supports dynamic configuration of sampling strategies and action sources
+
+# Sampling mode constants
+uint8 SAMPLING_WITH_REPLACEMENT = 0      # Can select the same node multiple times
+uint8 SAMPLING_WITHOUT_REPLACEMENT = 1   # Each node can only be selected once
+uint8 SAMPLING_SEQUENTIAL = 2            # Nodes are executed in order
+
+# Request parameters
+uint8 sampling_mode                      # Sampling strategy to use (see constants above)
+string predefined_actions_filename       # Filename to load as predefined action source (e.g., "predefined.json")
+string[] dag_nodes_json                  # JSON list of DAG nodes to sample from (optional, overrides file if provided)
+bool reset_sampling_state               # Whether to reset sampling state (useful for without_replacement and sequential modes)
+
+---
+
+# Response
+bool success                             # Whether the configuration was successful
+string message                          # Status message or error description
+uint8 error_code                        # Error code (0 = success, >0 = error)
+uint32 total_actions_available          # Total number of actions available after configuration
+uint32 remaining_actions                # Remaining actions (relevant for without_replacement mode)

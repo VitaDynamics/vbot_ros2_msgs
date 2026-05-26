@@ -1,0 +1,7 @@
+string domain
+string action  # start | reboot | finish
+software_msgs/OTAItem[] items
+---
+bool success
+string message
+

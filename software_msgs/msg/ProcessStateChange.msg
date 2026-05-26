@@ -1,0 +1,12 @@
+uint32 IDLE = 1
+uint32 INITIALIZING = 2
+uint32 RUNNING = 3
+uint32 TERMINATING = 4
+uint32 PAUSE = 5
+uint32 TERMINATED = 6
+uint32 ABNORMAL_TERMINATED = 7
+uint32 SELF_TERMINATED = 8
+
+string name
+uint32 state
+

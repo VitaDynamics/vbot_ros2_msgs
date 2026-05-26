@@ -1,0 +1,29 @@
+uint8     AGENT_CMD_PARAM_UPLOAD = 1    # 参数文件上传
+uint8     DIAGNOSE_CODE_UPLOAD = 2      # 诊断码上传
+uint8     MCAP_FILE_UPLOAD = 3          # mcap文件上传
+uint8     WAV_FILE_UPLOAD = 4           # wav文件上传
+uint8     VEHICLE_STATUS_UPLOAD = 5     # 上传车辆状态
+uint8     TRIGGER_INFO_UPLOAD = 6       # 上传TiggeInfo
+uint8     LOG_FILE_UPLOAD = 7           # 上传日志文件
+uint8     AGENT_CMD_PARAM_DOWNLOAD = 8  # 参数文件下载
+uint8     AGENT_LUS_REQ_UPGRADE = 9     # 请求上云通信
+uint8     AGENT_LUS_REQ_DOWNLOAD = 10   # 请求下载数据
+uint8     EVENT_NOTIFY_UPLOAD = 11      # Event通知上传
+uint8     SYSTEM_INFO_UPLOAD = 12       # 系统运行信息上传
+uint8     AGENT_LUS_REQ_HTTP = 13       # 请求HTTP透传
+uint8     COMM_FILE_UPLOAD = 14         # 文件上传请求
+uint8     AGENT_LUS_INSTALL_RES_UP = 15 # 上报云端升级结果
+
+int64     timestamp
+uint8     cmd
+string    type
+string    node
+uint8[]   payload
+uint8[]   reserved
+
+---
+int64 SUCC = 0
+int64 FAIL = -1
+
+int64     err_code
+uint8[]   payload

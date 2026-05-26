@@ -1,0 +1,8 @@
+bool enable # true to enable, false to turn off. 
+
+---
+
+# Response
+bool success            # Whether the action was successful
+string message          # Status message or error description
+uint8 error_code # optional error code.

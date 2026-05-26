@@ -1,0 +1,9 @@
+# Start/stop CAN frame recording with optional filters.
+# Default filter values (-1) match all frames.
+bool start             # true = start recording, false = stop
+int16 channel          # -1 = all channels, else match exact channel
+int32 can_id           # -1 = all CAN IDs, else match exact can_id
+int8 direction         # -1 = all, 0 = Tx only, 1 = Rx only
+---
+bool success
+string message

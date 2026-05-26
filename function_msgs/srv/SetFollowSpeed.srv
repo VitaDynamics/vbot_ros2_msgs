@@ -1,0 +1,22 @@
+# Request
+# Desired default maximum forward velocity for follow behavior (m/s)
+float32 following_speed
+
+# Optional human-readable source identifier (e.g., "app", "voice_command")
+string source
+
+---
+# Response
+bool success
+string message
+
+# The speed value applied after validation/clamping (m/s)
+float32 applied_speed
+
+# Optional error code for clients that need structured error handling
+int32 error_code
+
+# Error code definitions
+int32 SUCCESS=0
+int32 INVALID_SPEED=1
+int32 PERSISTENCE_FAILED=2

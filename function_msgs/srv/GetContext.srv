@@ -1,0 +1,11 @@
+# GetContext.srv
+# Service for retrieving complete context state as structured data
+# Based on CONTEXTNODE.md specification
+
+# Request: Empty request (returns complete context snapshot)
+# No keys needed - returns full structured context
+
+---
+
+# Response: Complete context state as structured data
+function_msgs/ContextSnapShot snapshot

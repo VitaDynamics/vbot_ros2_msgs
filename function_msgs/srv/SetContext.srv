@@ -1,0 +1,18 @@
+# SetContext.srv
+# Service for setting multiple key-value pairs in the global context
+
+# Request: Multiple key-value pairs to set. Better to use.
+function_msgs/KeyValue[] kv_pairs
+
+# Legacy method (deprecated): Use kv_pairs instead
+string[] keys
+string[] values
+
+string source_node
+string request_id
+
+---
+
+# Response: Success status and message
+bool success
+string message

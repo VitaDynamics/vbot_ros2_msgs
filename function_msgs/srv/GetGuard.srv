@@ -1,0 +1,22 @@
+# GetGuard.srv
+# Service for requesting safety/obstacle detection data from guard node
+# Based on guard_node.cpp SafetyResponse structure
+
+# Request: Operating mode for guard service
+string mode
+
+---
+
+# Response: Safety data for all quadrants around robot
+float32 front_occupancy
+float32 left_occupancy  
+float32 right_occupancy
+float32 rear_occupancy
+
+bool front_has_obstacle
+bool left_has_obstacle
+bool right_has_obstacle
+bool rear_has_obstacle
+
+int32 error_code
+string message

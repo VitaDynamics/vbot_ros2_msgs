@@ -1,0 +1,15 @@
+bool require_ramp
+bool require_payload
+builtin_interfaces/Time min_sample_time
+---
+builtin_interfaces/Time sample_time
+uint8 query_code
+string query_reason
+
+uint8 ramp_code
+uint8 ramp_status
+float32 ramp_angle_deg
+
+uint8 payload_code
+uint8 payload_status
+float32 payload_mass_kg

@@ -1,0 +1,6 @@
+# 请求参数
+# 无参数
+---
+# 响应参数
+bool success
+string message

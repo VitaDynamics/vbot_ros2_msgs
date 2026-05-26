@@ -1,0 +1,14 @@
+# Goal
+string file_type
+string object_key
+string file_path
+string checkpoint_dir
+string checksum
+string old_file_path
+string old_checkpoint_dir
+---
+# Result
+bool success
+string message
+---
+# Feedback

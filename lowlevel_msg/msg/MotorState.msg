@@ -1,0 +1,15 @@
+uint8 mode
+float32 q
+float32 dq
+float32 ddq
+float32 tau_est
+float32 q_raw
+float32 dq_raw
+float32 ddq_raw
+int8 temperature
+uint32 lost
+uint32 accumulated_running_sec 
+uint32[3] thermal_integral
+int16 overload_integral
+int16 mos_temperature_raw
+uint32[2] reserve

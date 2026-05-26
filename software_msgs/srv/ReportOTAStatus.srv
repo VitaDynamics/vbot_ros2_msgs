@@ -1,0 +1,7 @@
+string domain
+string component_type
+int32 progress
+int32 status  # 0 ok, -1 error (extend as needed)
+---
+bool accepted
+

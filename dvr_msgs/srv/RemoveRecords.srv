@@ -1,0 +1,19 @@
+# Request to remove one or more finalized DVR records
+# Each record_id must be a stable vod_* record basename.
+
+string[] record_ids
+
+---
+# Response
+bool success
+bool partial_success
+string message
+uint32 error_code
+
+string[] removed_record_ids
+uint64[] removed_record_bytes
+uint64 total_removed_bytes
+
+string[] failed_record_ids
+uint32[] failed_error_codes
+string[] failed_messages

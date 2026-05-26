@@ -1,0 +1,17 @@
+# State enum
+uint8 RUNNING = 0
+uint8 TERMINATING = 1
+
+string service_name
+uint8 state
+
+---
+
+int32 OK = 0
+int32 ERROR_CODE_UNKNOWN_STATE = 1
+
+int32 error_code
+
+
+
+

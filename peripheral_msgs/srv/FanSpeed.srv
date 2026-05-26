@@ -1,0 +1,9 @@
+# 获取风扇转速服务
+# 请求
+uint8 fan_idx           # 风扇编号: 0=板子风扇, 1=狗屁股风扇
+---
+# 响应
+bool success            # 是否成功
+uint32 speed_rpm        # 转速 (rpm)
+string message          # 响应消息
+

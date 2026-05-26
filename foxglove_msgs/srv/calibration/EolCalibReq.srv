@@ -1,0 +1,32 @@
+# foxglove_msgs/calibration/EolCalibReq.srv
+
+int8  calib_cmd     # 0: 进入EOL标定, 1: 请求标定数据 2: 退出EOL标定
+int32 calib_target  # 0x00000001: sensor00
+                    # 0x00000002: sensor01  
+                    # 0x00000004: sensor02
+                    # 0x00000008: sensor03
+                    # 0x00000010: sensor04
+                    # 0x00000020: sensor05
+                    # 0x00000040: sensor06
+                    # 0x00000080: sensor07
+                    # 0x00000100: sensor08
+                    # 0x00000200: sensor09
+                    # 0x00000400: sensor10
+                    # 0x00000800: sensor11
+                    # 0x00001000: sensor12
+                    # 0x00002000: sensor13
+                    # 0x00004000: sensor14
+                    # 0x00008000: sensor15
+                    # 0x00010000: sensor16
+                    # 0x00020000: sensor17
+                    # 0x00040000: sensor18
+                    # 0x00080000: sensor19
+                    # 0x00100000: sensor20
+                    # 0x00200000: sensor21
+                    # 0x00400000: sensor22
+                    # 0x00800000: sensor23
+---
+int32 cmd_reslt     # 0: succ
+                    # 1: failed - enter eol mode failed
+                    # 2: failed - invalid cmd
+int32[24] sensor_calib_result

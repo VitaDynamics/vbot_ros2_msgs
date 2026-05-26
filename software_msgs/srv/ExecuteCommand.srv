@@ -1,0 +1,7 @@
+# Request contains the command to execute on S100
+string command
+---
+# Response indicates success and provides output
+bool success
+int32 ret_code
+string output

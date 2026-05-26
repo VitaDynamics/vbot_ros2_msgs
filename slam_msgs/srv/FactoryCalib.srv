@@ -1,0 +1,21 @@
+# Request
+uint32 CALIB_STEREO=1      # 双目标定
+uint32 CALIB_LIDAR=2       # 激光雷达标定  
+uint32 CALIB_IMU=4         # IMU标定
+uint32 CALIB_UWB=8         # UWB标定
+uint32 CALIB_HEAD=16       # 头部舵机标定
+uint32 CALIB_JOINT=32      # 关节标定
+uint32 CALIB_INFRARED=64   # 红外传感器标定/验证
+
+uint32 calib_mask          # 标定项的位掩码组合
+uint8 MODE_UNKNOWN=0       # 未知模式(错误)
+uint8 MODE_MAINBOARD=1     # 主板模式
+uint8 MODE_FULLSYSTEM=2    # 整机模式
+uint8 calib_mode           # 标定模式
+string config_path         # 配置文件路径
+string report_path        # 报告输出路径
+---
+# Response 
+uint8 status              # 标定状态(同 CalibStatus.msg 定义)
+string message            # 状态描述/错误信息
+string progress           # 进度信息(JSON格式,包含各阶段状态)

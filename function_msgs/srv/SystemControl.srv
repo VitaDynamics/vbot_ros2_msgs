@@ -1,0 +1,9 @@
+# Request: control command for system start/stop
+# This is a legacy usage.
+string command  # "catwalk_start" or "catwalk_stop"
+
+---
+
+# Response: success status and message
+bool success
+string message

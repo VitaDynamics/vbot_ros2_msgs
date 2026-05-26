@@ -1,0 +1,51 @@
+# 通用事件消息定义
+# 用于在ROS2系统中传递HSM事件
+# 此文件由enum_to_idl.py工具自动生成常量定义
+# 生成时间: 2025-06-03 12:05:30
+
+# ModuleID 枚举常量
+int32 MODULEID_SMC = 0
+int32 MODULEID_HMI = 1
+int32 MODULEID_LOCOMOTION = 2
+
+# EventID 枚举常量
+int32 EVENTID_EV_HARDWARE_CHECK_SUCCESS = 0
+int32 EVENTID_EV_HARDWARE_CHECK_FAILED = 1
+int32 EVENTID_EV_EM_LAUNCH_SUCCESS = 2
+int32 EVENTID_EV_EM_LAUNCH_FAILED = 3
+int32 EVENTID_EV_LOCOMOTION_ACTION_OK = 4
+int32 EVENTID_EV_LOCOMOTION_ACTION_ERROR = 5
+int32 EVENTID_EV_SYSTEM_OVER_LOAD = 6
+int32 EVENTID_EV_SYSTEM_RECOVERY_SUCCESS = 7
+int32 EVENTID_EV_SYSTEM_RECOVERY_FAILED = 8
+
+# EventDetailStatus 枚举常量
+int32 EVENTDETAILSTATUS_SUCCESS = 0
+int32 EVENTDETAILSTATUS_FAILURE = 1
+int32 EVENTDETAILSTATUS_WARNING = 2
+int32 EVENTDETAILSTATUS_INFO = 3
+int32 EVENTDETAILSTATUS_FAILED = 4
+int32 EVENTDETAILSTATUS_TIMEOUT = 5
+
+# Priority 枚举常量
+int32 PRIORITY_LOW = 0
+int32 PRIORITY_NORMAL = 1
+int32 PRIORITY_MEDIUM = 2
+int32 PRIORITY_HIGH = 3
+
+# 事件ID - 使用int32表示不同的事件类型
+int32 event_id
+
+# 时间戳 - 事件发生的时间（纳秒）
+int64 timestamp
+
+# 事件源模块名称
+int32 source_module
+
+# 事件优先级 (0=低, 1=正常, 2=高, 3=紧急)
+int32 priority
+
+int32 detail_status
+
+---
+int32 error_code

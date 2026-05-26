@@ -1,0 +1,5 @@
+string topic
+uint64 publish_stamp_ns
+string upstream_node
+uint64 reception_stamp_ns
+uint64 sequence

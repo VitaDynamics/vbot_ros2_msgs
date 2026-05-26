@@ -1,0 +1,4 @@
+float64 traction_inertia_user
+---
+bool success
+string message

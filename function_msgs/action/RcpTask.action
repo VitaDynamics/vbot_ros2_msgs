@@ -1,0 +1,20 @@
+# Goal
+string request_id
+string source
+string dag
+int32 priority
+---
+# Result
+bool success
+uint8 error_code
+string message
+string request_id
+int64 duration_ms
+---
+# Feedback
+string status
+string current_node
+uint8 progress_pct
+uint32 completed_nodes
+uint32 total_nodes
+string message

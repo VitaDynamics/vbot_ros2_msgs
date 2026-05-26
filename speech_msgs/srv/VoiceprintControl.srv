@@ -1,0 +1,16 @@
+# Voiceprint Control Service
+# 声纹控制服务
+
+# Request fields
+# 请求字段
+bool enable                                # 开关状态 (true=启动声纹注册, false=停止声纹注册)
+
+---
+# Response fields
+# 响应字段
+bool success                               # 操作是否成功
+string message                             # 响应消息
+
+
+
+

@@ -1,0 +1,9 @@
+# Request fields
+string system_prompt
+string user_prompt
+sensor_msgs/Image[] images
+
+# Optional Request fields. 
+---
+# Response field
+string response_text

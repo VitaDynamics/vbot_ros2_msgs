@@ -1,0 +1,27 @@
+# Speech Text Data Service
+# 语音文本数据服务
+
+# Request fields
+# 请求字段
+
+# Data type constants
+# 数据类型常量
+uint8 TYPE_ASR = 1                      # ASR_TEXT (自动语音识别)
+uint8 TYPE_TTS = 2                      # TTS_TEXT (文本转语音)
+uint8 TYPE_NLU = 3                      # NLU_TEXT (自然语言理解)
+uint8 TYPE_WAKEUP_VOICE = 4             # WAKEUP_VOICE (语音唤醒)
+uint8 TYPE_WAKEUP_BUTTON = 5            # WAKEUP_BUTTON (按键唤醒)
+uint8 TYPE_ONLINE_CMD = 6               # ONLINE_COMMAND (在线命令词)
+uint8 TYPE_OFFLINE_CMD = 7              # OFFLINE_COMMAND (离线命令词)
+
+uint8 data_type                         # 数据类型 (1=ASR, 2=TTS, 3=NLU, 4=语音唤醒, 5=按键唤醒, 6=在线命令词, 7=离线命令词)
+string text                             # 文本内容
+string sn                               # 序列号
+builtin_interfaces/Time timestamp       # 时间戳
+
+---
+# Response fields
+# 响应字段
+bool success                            # 操作是否成功
+string message                          # 响应消息
+

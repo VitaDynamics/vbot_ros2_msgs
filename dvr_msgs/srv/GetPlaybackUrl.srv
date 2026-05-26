@@ -1,0 +1,24 @@
+# Request to get playback URL for a recorded session
+# Returns HTTP URL for streaming playback
+
+string session_id                     # Session ID to get URL for
+string quality                        # Requested quality: "low", "medium", "high", "original"
+bool generate_thumbnail               # Whether to generate thumbnail images
+
+---
+# Response
+bool success                          # Whether the request was successful
+string message                        # Status message or error description  
+uint32 error_code                     # Error code (0 = success)
+
+# Playback URLs
+string m3u8_url                       # HLS playlist URL
+string base_url                       # Base URL for accessing segments
+string thumbnail_url                  # Thumbnail image URL (if requested)
+
+# Session metadata
+uint32 duration_seconds               # Total duration
+uint32 video_width                    # Video width in pixels
+uint32 video_height                   # Video height in pixels
+float32 video_fps                     # Video frame rate
+uint32 total_segments                 # Total number of segments

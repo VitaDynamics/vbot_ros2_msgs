@@ -1,0 +1,14 @@
+
+#trigger发生的时间戳 
+int64 timestamp
+
+#trigger导向的域
+string rule_group
+string rule
+
+#待记录的topic
+string[] topics
+
+---
+bool success
+string message

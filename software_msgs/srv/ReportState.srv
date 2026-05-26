@@ -1,0 +1,8 @@
+string soc_id
+StateChangeNtfy ntfy
+---
+int32 OK = 0
+int32 ERROR_CODE_INVALID_SOC = 1
+int32 ERROR_CODE_INVALID_NTFY = 2
+
+int32 error_code

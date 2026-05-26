@@ -1,0 +1,10 @@
+# AuthActivate.srv
+# 产线百度语音鉴权激活服务
+# 传入设备序列号(SN)进行云端鉴权激活
+#
+# Request: serial_number 设备序列号
+string serial_number
+---
+# Response
+bool success
+string message

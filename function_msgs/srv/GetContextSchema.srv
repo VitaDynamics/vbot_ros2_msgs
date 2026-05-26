@@ -1,0 +1,23 @@
+# GetContextSchema.srv
+# Service for discovering available context keys and their schema information
+
+# Request: Optional filters for schema discovery
+string[] key_categories    # Optional: Filter by category (e.g., ["DAG", "NAV", "SYSTEM"])
+bool include_types         # Optional: Include type information (default: true)
+bool include_descriptions  # Optional: Include field descriptions (default: true)
+
+---
+
+# Response: Complete schema information
+bool success
+string message
+
+# Schema version information
+string schema_version
+uint64 schema_timestamp
+
+# Available keys with full schema information
+function_msgs/ContextKeySchema[] keys
+
+# Category groupings
+string[] categories

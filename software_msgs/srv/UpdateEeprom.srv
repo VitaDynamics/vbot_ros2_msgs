@@ -1,0 +1,6 @@
+string file_name
+uint64 offset
+uint8[] content
+---
+bool success
+string message

@@ -1,0 +1,11 @@
+# AudioLoopbackTest.srv
+# 产线音频回环测试服务
+# 喇叭播放1kHz正弦波，Mic阵列录制，FFT频谱分析判定喇叭和Mic是否正常
+#
+# Request: 空（触发一次测试）
+---
+# Response
+bool overall_pass
+bool ref_pass
+bool mic_pass
+string result_json

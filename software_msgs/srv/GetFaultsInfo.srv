@@ -1,0 +1,16 @@
+byte GET_ALL_FAULTS = 0  
+byte GET_SPECIFIC_FAULTS = 1 
+byte GET_LATEST_FAULTS = 2 
+byte GET_CURRENT_OCCUR_FAULTS = 3
+
+byte type
+software_msgs/FaultList[] fault_list
+---
+software_msgs/FaultInfo[] fault_info_array
+
+int32 ERROR_CODE_OK = 0
+int32 ERROR_CODE_UNKNOWN_FAULT_ID = 1
+int32 ERROR_CODE_UNKNOWN_COMMAND = 2
+
+int32 error_code
+string desc

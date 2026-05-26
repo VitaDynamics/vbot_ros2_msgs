@@ -1,0 +1,10 @@
+software_msgs/TimerDebounce[] timer_debounce_array
+
+---
+
+int32 ERROR_CODE_OK = 0
+int32 ERROR_CODE_UNKNOWN_FAULT_ID = 1
+int32 ERROR_CODE_CONFIGURED_DEBOUNCE = 2
+
+int32 error_code
+string desc

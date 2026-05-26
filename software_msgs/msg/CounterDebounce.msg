@@ -1,0 +1,3 @@
+uint32 fault_id
+uint32 failed_cnt_threshold
+uint32 passed_cnt_threshold

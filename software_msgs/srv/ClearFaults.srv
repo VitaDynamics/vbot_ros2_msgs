@@ -1,0 +1,15 @@
+byte CLEAR_ALL_FAULTS = 0  
+byte CLEAR_SPECIFIC_FAULTS = 1  
+byte CLEAR_MOTOR_FAULTS = 2  
+
+byte type
+uint32[] fault_array
+
+---
+
+int32 ERROR_CODE_OK = 0
+int32 ERROR_CODE_UNKNOWN_FAULT_ID = 1
+int32 ERROR_CODE_UNKNOWN_COMMAND = 2
+
+int32 error_code
+string desc

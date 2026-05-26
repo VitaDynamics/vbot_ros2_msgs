@@ -1,0 +1,6 @@
+# 请求参数
+string type # "update" or "read"
+string content # if type is "update", then content has the calib yaml content
+---
+# 响应参数
+bool success

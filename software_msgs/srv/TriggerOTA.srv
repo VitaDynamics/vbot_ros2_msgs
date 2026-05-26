@@ -1,0 +1,8 @@
+# 触发整体 OTA 升级的简单服务
+# 由状态机调用，启动完整的 OTA 流程
+
+string manifest_path  # OTA manifest 文件路径，为空时使用默认 /ota/manifest.yaml
+int32 phase          # OTA 阶段：1=一阶段刷写，2=二阶段验证
+---
+bool success         # 是否成功启动 OTA 流程
+string message       # 返回消息

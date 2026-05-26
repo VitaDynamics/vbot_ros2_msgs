@@ -1,0 +1,8 @@
+# Request: Input image for pose detection
+sensor_msgs/Image image    # Input image (can be in various formats)
+---
+# Response: Detection results
+vision_msgs/PoseDetection[] poses      # Array of detected poses (multiple persons possible)
+vision_msgs/HumanDetectionStatus status     # Overall detection status
+bool success              # True if detection was successful
+string message            # Error message if success is false

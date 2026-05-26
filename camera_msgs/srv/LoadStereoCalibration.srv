@@ -1,0 +1,9 @@
+# Request
+---
+# Response
+bool success
+string message
+sensor_msgs/CameraInfo left
+sensor_msgs/CameraInfo right
+
+

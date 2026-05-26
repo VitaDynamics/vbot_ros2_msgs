@@ -1,0 +1,39 @@
+# Semantic Navigation Query Service
+# Uses VLM to analyze an image and prompt, then queries SLAM map for navigation
+
+# Request: user prompt and base64-encoded image
+string prompt
+string base64_image
+builtin_interfaces/Time timestamp  # Timestamp of image capture for pose query
+bool use_predicted_depth           # If true, pass VLM estimated depth to QueryMap pixel.z
+
+# Optional ROI-based frustum query (preferred when perception provides ROI).
+# camera_frame_id should be stereo_left or stereo_right.
+string camera_frame_id
+uint32 roi_x_min
+uint32 roi_y_min
+uint32 roi_x_max
+uint32 roi_y_max
+
+---
+
+# Response
+bool success
+string message
+
+# Direction extracted from VLM (in body frame)
+geometry_msgs/Vector3 direction
+float32 confidence
+float32 estimated_distance_m  # Absolute distance estimated by VLM (meters)
+
+# Final map-query frustum FOV (degrees).
+float32 hor_fov
+float32 ver_fov
+
+# Map query result summary
+uint32 point_count
+float32 matched_time_diff_ms
+string frame_id
+
+# Point cloud data (optional, can be empty if only direction needed)
+sensor_msgs/PointCloud2 cloud

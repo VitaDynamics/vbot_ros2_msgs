@@ -1,0 +1,12 @@
+# Request: set DVR recording enabled/disabled
+bool enabled
+
+---
+
+# Response
+bool success
+bool current
+string message
+
+
+

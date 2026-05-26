@@ -1,0 +1,4 @@
+uint64 publish_stamp_ns
+string publisher_node
+uint64 sequence
+topic_header_msgs/TopicDependency[] upstream_dependencies

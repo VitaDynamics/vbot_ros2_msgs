@@ -1,0 +1,5 @@
+---
+software_msgs/FaultList[] fault_cnt
+
+int32 error_code
+string desc

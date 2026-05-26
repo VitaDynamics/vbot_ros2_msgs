@@ -1,0 +1,13 @@
+# GetLowState.srv
+# Service for requesting a single frame of low-level state data
+# This provides on-demand access to the latest lowstate information
+
+# Request: Empty request - just trigger to get latest data
+# No parameters needed as we always return the most recent state
+
+---
+
+# Response: Complete low-level state information
+lowlevel_msg/LowState low_state    # The latest low-level state data
+bool success                       # Whether the request was successful
+string message                     # Optional status message or error description

@@ -1,0 +1,1 @@
+software_msgs/FaultStatusBase[] fault_array

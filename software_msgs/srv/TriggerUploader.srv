@@ -1,0 +1,9 @@
+
+#待上传文件的路径
+string[] file_list
+
+---
+#已上传成功的文件路径列表
+string[] uploaded_files
+#上传失败的文件路径列表
+string[] failed_files

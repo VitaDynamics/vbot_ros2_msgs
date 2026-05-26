@@ -1,0 +1,4 @@
+---
+bool enable # enabled or disabled of the function
+uint8 value # value of the function property
+string message

@@ -1,0 +1,19 @@
+# Music Record Control Service
+# 音乐录制控制服务 (用于闻歌起舞功能)
+
+# Request fields
+# 请求字段
+uint8 REQUEST_START_RECORD = 1      # 开始录制
+uint8 REQUEST_STOP_RECORD = 2       # 停止录制
+uint8 REQUEST_QUERY_STATUS = 3      # 查询录制状态
+
+uint8 request_type                   # 请求类型
+uint32 max_duration                  # 最大录制时长(秒), 0表示不限制
+
+---
+# Response fields
+# 响应字段
+bool success                         # 操作是否成功
+string message                       # 响应消息
+bool is_recording                    # 当前是否正在录制
+

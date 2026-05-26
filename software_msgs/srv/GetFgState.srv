@@ -1,0 +1,10 @@
+string fg_name
+---
+
+int32 OK = 0
+int32 ERROR_CODE_UNKNOWN_FG = 1
+int32 ERROR_CODE_CHANGE_FAILED = 2
+
+int32 error_code
+string state
+string mode #Running mode

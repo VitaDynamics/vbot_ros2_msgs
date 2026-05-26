@@ -1,0 +1,17 @@
+# 请求
+bool control # True to start , False to end 
+float32 x # x position for Goal Point
+float32 y # y position for Goal Point
+float32 z # z position for Goal Point 
+float32 yaw # constrain yaw. 
+
+---
+# 响应
+bool success         # 是否成功
+string message       # 响应消息 Optional
+int32 error_code # Optional
+
+---
+# Feedback
+int32[] progress
+string message

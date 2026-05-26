@@ -1,0 +1,6 @@
+# 请求参数
+---
+# 响应参数
+bool success
+string content # YAML text content on success
+string message # error description on failure

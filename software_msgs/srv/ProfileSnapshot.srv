@@ -1,0 +1,22 @@
+# ProfileSnapshot.srv - Profile snapshot service
+# 触发perf/ftrace snapshot
+
+# 常量定义
+string PERF = "perf"
+string FTRACE = "ftrace"
+string ALL = "all"
+
+# 请求
+string snapshot_type    # snapshot类型: "perf", "ftrace", 或 "all"
+string reason           # snapshot原因描述
+float64 snapshot_delay_sec  # 额外等待秒数，0表示立即触发
+
+---
+
+# 响应
+bool success            # 是否成功
+string message          # 状态消息或错误描述
+string snapshot_id      # 生成的snapshot ID
+string perf_file        # perf文件路径（如果有）
+string ftrace_file      # ftrace文件路径（如果有）
+

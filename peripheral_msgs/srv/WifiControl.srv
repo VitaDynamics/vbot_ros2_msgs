@@ -1,0 +1,11 @@
+uint8 DISCONNECT = 0
+uint8 CONNECT = 1
+
+uint8 op
+string ssid
+string password
+---
+bool success
+int8 signal
+string mac
+string message

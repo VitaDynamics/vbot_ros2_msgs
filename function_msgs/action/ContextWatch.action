@@ -1,0 +1,49 @@
+# ContextWatch.action
+# Action for watching and getting notified when specific context keys change
+# Provides request-response pattern with feedback for monitoring context state changes
+#
+# This action allows clients to:
+# 1. Subscribe to specific context key changes
+# 2. Get notified immediately when those keys change
+# 3. Receive periodic feedback while waiting
+# 4. Handle timeouts gracefully
+# 5. Cancel watch requests
+
+# === REQUEST (Goal) ===
+# Keys to monitor for changes
+string[] watch_keys
+
+# Timeout in seconds (0 = wait indefinitely until change or cancellation)
+float32 timeout_sec
+
+---
+
+# === RESULT (Sent once when goal completes) ===
+# Whether the watch completed successfully (change detected before timeout)
+bool success
+
+# Human-readable message describing the result
+# Examples: "Change detected", "Timeout waiting for change", "Goal canceled"
+string message
+
+# Keys that changed (subset of watch_keys that actually changed)
+string[] changed_keys
+
+# New values for the changed keys
+string[] new_values
+
+# Timestamp when the change was detected
+builtin_interfaces/Time change_timestamp
+
+---
+
+# === FEEDBACK (Sent multiple times during execution) ===
+# Time elapsed since watch started (in seconds)
+float32 elapsed_time
+
+# Keys that changed in the most recent update (empty if no change yet)
+string[] latest_changed_keys
+
+# Values for the most recent changed keys (empty if no change yet)
+string[] latest_changed_values 
+

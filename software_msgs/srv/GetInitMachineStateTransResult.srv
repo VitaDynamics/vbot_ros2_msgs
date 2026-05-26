@@ -1,0 +1,8 @@
+---
+
+int32 SUCESSFUL= 0
+int32 FAILED= 1
+int32 TIMEOUT= 2
+
+int32 result
+

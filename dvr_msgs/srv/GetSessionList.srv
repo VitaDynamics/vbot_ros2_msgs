@@ -1,0 +1,22 @@
+# Request to get list of recorded sessions
+# Returns information about available recording sessions
+
+# Filter parameters (optional)
+builtin_interfaces/Time start_time    # Filter sessions after this time
+builtin_interfaces/Time end_time      # Filter sessions before this time  
+uint32 max_results                    # Maximum number of results (0 = all)
+
+---
+# Response
+bool success                          # Whether the request was successful
+string message                        # Status message or error description
+uint32 error_code                     # Error code (0 = success)
+
+# Session information
+string[] session_ids                  # List of session IDs
+string[] session_names                # List of session names
+builtin_interfaces/Time[] start_times # Session start times
+uint32[] durations                    # Session durations in seconds
+uint64[] file_sizes                   # Total file sizes in bytes
+bool[] has_video                      # Whether session has video
+bool[] has_audio                      # Whether session has audio

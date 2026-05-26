@@ -1,0 +1,10 @@
+# EFUSE控制服务
+# 请求
+uint8 operation        # 操作类型: 0=查询, 1=写入
+string pn_code         # PN码 (19位ASCII码字符串，可包含数字和字母，写入时必需)
+---
+# 响应
+bool success           # 是否成功
+string message         # 响应消息
+string pn_code         # PN码 (查询时返回)
+
