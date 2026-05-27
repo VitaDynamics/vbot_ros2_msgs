@@ -18,6 +18,8 @@ jobs:
     timeout-minutes: 30
     container:
       image: ros:humble-ros-base
+    env:
+      AMENT_TRACE_SETUP_FILES: "1"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
