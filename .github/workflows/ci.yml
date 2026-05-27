@@ -18,8 +18,6 @@ jobs:
     timeout-minutes: 30
     container:
       image: ros:humble-ros-base
-    env:
-      AMENT_TRACE_SETUP_FILES: "1"
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,7 +27,7 @@ jobs:
       - name: rosdep install
         shell: bash
         run: |
-          set -euo pipefail
+          set -eo pipefail
           apt-get update
           rosdep update --rosdistro=humble
           rosdep install --from-paths src --ignore-src -r -y --rosdistro=humble
@@ -37,14 +35,14 @@ jobs:
       - name: colcon build
         shell: bash
         run: |
-          set -euo pipefail
+          set -eo pipefail
           source /opt/ros/humble/setup.bash
           colcon build --event-handlers console_direct+ --cmake-args -DCMAKE_BUILD_TYPE=Release
 
       - name: colcon test
         shell: bash
         run: |
-          set -euo pipefail
+          set -eo pipefail
           source /opt/ros/humble/setup.bash
           colcon test --event-handlers console_direct+ --return-code-on-test-failure
           colcon test-result --verbose
