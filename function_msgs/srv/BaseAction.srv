@@ -30,3 +30,4 @@ float32 stop_distance    # Arrival threshold override for NAV_TO_POINT (0.0 = us
 # Response
 bool success            # Whether the action was successful
 string message          # Status message or error description
+int32 error_code        # Error code: 0=none, 1=odom_unavailable, 2=odom_stale, 3=position_not_initialized
