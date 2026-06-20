@@ -1,0 +1,21 @@
+# SetRuleSwitches.srv
+# The sole external mutation surface for RCP interaction-rule switches.
+#
+# OWNERSHIP: served by RCP. Read state on /function/context/context_snapshot
+# (rcp_status.rule_switches.*). Do NOT use /function/context/set_context as a
+# control channel for these switches — that path is reserved for RCP's own
+# publication of its state.
+#
+# SEMANTICS:
+# - Each entry in `switches` is one (id, enabled) pair. Multiple entries are
+#   applied in order; the call is not transactional — unknown ids land in
+#   `rejected` while known ids in the same request still apply.
+# - `ok` is true iff `rejected` is empty.
+
+function_msgs/RuleSwitchEntry[] switches
+string                       source_node    # caller identifier (logging/trace)
+---
+bool                         ok
+string                       message
+function_msgs/RuleSwitchEntry[] applied      # echo of entries that succeeded
+function_msgs/RuleSwitchEntry[] rejected     # entries with unknown id

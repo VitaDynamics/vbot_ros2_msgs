@@ -79,3 +79,8 @@ uint32 progress_step
 
 # Total planned progress steps
 uint32 progress_total
+
+# ==================== INTERACTION RULE SWITCHES ====================
+# Persistent on/off switches for interaction_rules.yaml entries.
+# See function_msgs/msg/InteractionRuleSwitches.msg for the per-switch fields.
+function_msgs/InteractionRuleSwitches rule_switches
