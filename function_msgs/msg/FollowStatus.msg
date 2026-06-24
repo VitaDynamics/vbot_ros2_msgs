@@ -27,12 +27,7 @@ string modify_source
 # Following-specific fields (extensible)
 float32 follow_speed
 
-# Last mode result. For mode 6, this reports the latest SyncSemanticNav outcome.
-uint8 RESULT_UNKNOWN=0
-uint8 RESULT_SUCCESS=1
-uint8 RESULT_FAILED_TARGET_TOO_FAR=2
-
-uint8 last_result
-uint8 last_result_mode
-string last_result_reason
-float32 last_result_distance_m
+# NOTE: the last_result* fields (SyncSemanticNav outcome) were removed. vln now
+# reports follow / semantic-nav terminal results to rcp over the Aorta
+# `function/follow_task_report` topic keyed by req_id, instead of via this
+# ambient status / context snapshot.

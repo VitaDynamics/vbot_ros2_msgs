@@ -32,7 +32,7 @@ uint8 mos_xt30_is_open      # XT30 MOS开关状态
 uint8 mos_pre_discharge_is_open # 预放电MOS开关状态
 
 # Alarm information
-uint16 alarm                # 告警状态
+uint32 alarm                # 32位异常报警bitmask
 uint32 vendor_alarm         # 厂商告警
 
 # Temperature and voltage arrays
