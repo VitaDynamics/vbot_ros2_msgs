@@ -16,6 +16,16 @@ uint8 LOC_STATUS_LOST=4        # 跟踪丢失
 uint8 LOC_STATUS_RELOC=5       # 重定位中
 uint8 loc_status               # 当前定位状态
 
+# 里程计状态
+uint8 ODOM_STATUS_UNKNOWN=0    # 未知/未初始化
+uint8 ODOM_STATUS_INIT=1       # 初始化中
+uint8 ODOM_STATUS_TRACKING=2   # 正常输出
+uint8 ODOM_STATUS_DEGRADED=3   # 降级输出，质量变差但仍可用
+uint8 ODOM_STATUS_LOST=4       # 跟踪失败/不可用
+uint8 ODOM_STATUS_RESETTING=5  # 已触发 reset，等待重新产出有效 odom
+uint8 odom_status              # 当前里程计状态
+uint32 odom_status_seq         # reset/恢复等里程计关键边沿序号
+
 # 本地地图状态
 uint8 MAP_STATUS_IDLE=0        # 无地图/无有效地图任务
 uint8 MAP_STATUS_MAPPING=1     # 正在建图
